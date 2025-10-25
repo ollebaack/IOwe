@@ -68,7 +68,7 @@ export default function LoginForm() {
             </form>
           )}
         </CardContent>
-        <CardFooter className="text-xs text-muted-foreground justify-center">
+        <CardFooter className="text-xs justify-center">
           Powered by Supabase
         </CardFooter>
       </Card>
