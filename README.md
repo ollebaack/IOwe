@@ -1,4 +1,9 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Tech stack:
+
+Frontend: Next.js (React 18+, App Router)
+Backend: Supabase (Postgres + Auth + Storage)
+Hosting: Vercel
+Language: TypeScript
 
 ## Getting Started
 
