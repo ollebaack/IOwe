@@ -1,9 +1,9 @@
 Tech stack:
 
-Frontend: Next.js (React 18+, App Router)
-Backend: Supabase (Postgres + Auth + Storage)
-Hosting: Vercel
-Language: TypeScript
+* Frontend: Next.js (React 18+, App Router)
+* Backend: Supabase (Postgres + Auth + Storage)
+* Hosting: Vercel
+* Language: TypeScript
 
 ## Getting Started
 
