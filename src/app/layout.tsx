@@ -2,14 +2,14 @@ import "./globals.css";
 import React from "react";
 import Link from "next/link";
 import { SidebarProvider, SidebarTrigger } from "@/src/components/ui/sidebar";
-import { AppSidebar } from "@/src/components/app-sidebar";
+import { AppSidebar } from "@/src/components/layout/app-sidebar";
 import { Button } from "@/src/components/ui/button";
-import PageProvider from "./page-provider";
-import { Breadcrumbs } from "../components/breadcrumbs";
+import PageProvider from "../components/layout/page-provider";
 import { createSupabaseServer } from "../lib/supabase/server";
-import { ThemeProvider } from "@/src/components/theme-provider";
-import { ThemeToggle } from "@/src/components/theme-toggle";
 import { Architects_Daughter, Fira_Code } from "next/font/google";
+import { ThemeProvider } from "../components/layout/theme-provider";
+import { Breadcrumbs } from "../components/layout/breadcrumbs";
+import { ThemeToggle } from "../components/layout/theme-toggle";
 
 const architects = Architects_Daughter({
   subsets: ["latin"],

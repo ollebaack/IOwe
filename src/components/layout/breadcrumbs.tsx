@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import React from "react";
+import Link from "next/link";
 import {
   BreadcrumbSeparator,
   BreadcrumbItem,
@@ -9,8 +10,7 @@ import {
   BreadcrumbLink,
   Breadcrumb,
   BreadcrumbList,
-} from "./ui/breadcrumb";
-import Link from "next/link";
+} from "../ui/breadcrumb";
 
 // Optional mapping for pretty labels per segment
 const LABEL_MAP: Record<string, string> = {
