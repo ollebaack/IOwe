@@ -12,7 +12,6 @@ import {
   CardTitle,
   CardFooter,
 } from "@/src/components/ui/card";
-import Link from "next/link";
 import { Field, FieldLabel, FieldDescription } from "@/src/components/ui/field";
 
 export default function NewGroup() {
