@@ -20,7 +20,7 @@ export default function Home() {
   // This page is wrapped by <PageProvider> so we keep layout responsive
   // and avoid full-viewport background overrides. Use a tall hero within the container.
   return (
-    <section className="relative isolate overflow-hidden rounded-3xl border bg-gradient-to-br from-primary/5 via-background to-muted/40 p-6 sm:p-10 min-h-[65vh] flex flex-col items-center justify-center text-center">
+    <section className="relative isolate overflow-hidden rounded-3xl border bg-linear-to-br from-primary/5 via-background to-muted/40 p-6 sm:p-10 min-h-[65vh] flex flex-col items-center justify-center text-center">
       {/* Decorative blobs */}
       <div className="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />

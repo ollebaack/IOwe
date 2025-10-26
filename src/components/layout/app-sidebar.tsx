@@ -68,16 +68,13 @@ export function AppSidebar() {
             <SidebarMenu>
               {navItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild className="hover:bg-muted/60">
+                  <SidebarMenuButton asChild className="hover:bg-muted/95">
                     <Link
                       href={item.href}
                       className="flex items-center gap-3 text-sm font-medium text-foreground/80 hover:text-foreground"
                     >
                       <item.icon className="h-4 w-4 text-primary" />
                       <span>{item.title}</span>
-                      {item.title === "Home" && (
-                        <ChevronRight className="ml-auto h-3 w-3 text-muted-foreground" />
-                      )}
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

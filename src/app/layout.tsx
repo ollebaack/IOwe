@@ -10,6 +10,7 @@ import { Architects_Daughter, Fira_Code } from "next/font/google";
 import { ThemeProvider } from "../components/layout/theme-provider";
 import { Breadcrumbs } from "../components/layout/breadcrumbs";
 import { ThemeToggle } from "../components/layout/theme-toggle";
+import { AppTopbar } from "../components/layout/app-topbar";
 
 const architects = Architects_Daughter({
   subsets: ["latin"],
@@ -32,11 +33,6 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const supabase = await createSupabaseServer();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
   return (
     <html
       lang="en"
@@ -46,41 +42,9 @@ export default async function RootLayout({
       <body className="min-h-screen bg-background text-foreground antialiased">
         <ThemeProvider>
           <SidebarProvider>
-            {/* Left rail */}
             <AppSidebar />
-
-            {/* Main column */}
             <div className="flex min-w-0 flex-1 flex-col">
-              {/* Top bar */}
-              <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur supports-backdrop-filter:bg-background/60">
-                <div className="flex h-14 items-center gap-2 px-3">
-                  <SidebarTrigger className="-ml-1" />
-
-                  <div className="min-w-0 flex-1">
-                    <Breadcrumbs />
-                  </div>
-
-                  {/* Theme toggle */}
-                  <ThemeToggle />
-
-                  {/* Auth */}
-                  {user ? (
-                    <form action="/auth/signout" method="post">
-                      <Button variant="outline" size="sm">
-                        Sign out
-                      </Button>
-                    </form>
-                  ) : (
-                    <Link href="/login">
-                      <Button variant="outline" size="sm">
-                        Sign in
-                      </Button>
-                    </Link>
-                  )}
-                </div>
-              </header>
-
-              {/* Content area */}
+              <AppTopbar />
               <PageProvider>{children}</PageProvider>
             </div>
           </SidebarProvider>
