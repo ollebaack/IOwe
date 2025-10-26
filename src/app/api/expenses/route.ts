@@ -11,7 +11,6 @@ type ExpensePayload = {
 
 export async function POST(request: Request) {
   const supabase = await createSupabaseServer();
-
   let body: ExpensePayload;
   try {
     body = await request.json();

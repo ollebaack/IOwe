@@ -11,9 +11,10 @@ import {
 import { Separator } from "@/src/components/ui/separator";
 import { useGroup } from "@/src/hooks/use-groups";
 import { useGroupExpenses } from "@/src/hooks/use-group-expenses";
-import { useGroupMembers } from "@/src/hooks/use-group-members";
 import ExpenseForm from "@/src/app/groups/[id]/parts/expense-form";
 import Settlement from "@/src/app/groups/[id]/parts/settlement-form";
+import AddMembersForm from "./members-form";
+import { useGroupMembers } from "@/src/hooks/use-group-members";
 
 export default function GroupDetail({
   id,
@@ -28,8 +29,11 @@ export default function GroupDetail({
     isLoading: loadingExpenses,
     mutate: mutateExpenses,
   } = useGroupExpenses(id);
-  const { data: members, isLoading: loadingMembers } = useGroupMembers(id);
-
+  const {
+    data: members,
+    isLoading: loadingMembers,
+    mutate: mutateMembers,
+  } = useGroupMembers(id);
   const memberIds = (members || [])
     .map((m) => m.user_id)
     .filter(Boolean) as string[];
@@ -49,7 +53,10 @@ export default function GroupDetail({
 
       <Separator />
 
-      {/* Add expense */}
+      <section>
+        <AddMembersForm groupId={id} onAdded={() => mutateMembers()} />
+      </section>
+
       <section>
         <Card>
           <CardHeader>

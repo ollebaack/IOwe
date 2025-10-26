@@ -16,7 +16,9 @@ async function postExpense(url: string, { arg }: { arg: CreateExpenseArgs }) {
   });
 
   if (!res.ok) {
+    console.log(url);
     const payload = await res.json().catch(() => ({}));
+    console.log(payload);
     throw new Error(payload?.error || `Request failed with ${res.status}`);
   }
   return (await res.json()) as { id: string };
