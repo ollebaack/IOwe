@@ -57,10 +57,10 @@ export default function AddMembersForm({
       <FieldSet>
         <FieldGroup className="flex w-full items-end gap-3">
           <Field className="flex-1">
-            <FieldLabel htmlFor="memberIds">Add members (user_id)</FieldLabel>
+            <FieldLabel htmlFor="memberIds">Add members</FieldLabel>
             <Input
               id="memberIds"
-              placeholder="user_abc123, user_def456, user_xyz..."
+              placeholder="user_...@gmail.com"
               value={raw}
               onChange={(e) => setRaw(e.target.value)}
               aria-invalid={!!error}
