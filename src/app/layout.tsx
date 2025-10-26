@@ -56,13 +56,6 @@ export default async function RootLayout({
                 <div className="flex h-14 items-center gap-2 px-3">
                   <SidebarTrigger className="-ml-1" />
 
-                  <Link
-                    href="/"
-                    className="mr-2 hidden text-sm font-semibold tracking-tight sm:inline"
-                  >
-                    IOwe
-                  </Link>
-
                   <div className="min-w-0 flex-1">
                     <Breadcrumbs />
                   </div>

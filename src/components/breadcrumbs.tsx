@@ -31,7 +31,7 @@ function toTitle(input: string) {
 export function Breadcrumbs() {
   const pathname = usePathname();
   const segments = pathname.split("/").filter(Boolean);
-
+  console.log("Breadcrumb segments:", segments);
   const items = segments.map((segment, i) => {
     const href = "/" + segments.slice(0, i + 1).join("/");
     const isLast = i === segments.length - 1;
@@ -62,7 +62,9 @@ export function Breadcrumbs() {
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
-            <Link href="/">Home</Link>
+            <Link className="font-semibold" href="/">
+              IOwe
+            </Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
         {items}
